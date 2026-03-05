@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Risk Prediction System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏦 Loan Risk Prediction System</h1>
+            <p class="subtitle">AI-powered loan approval risk assessment</p>
+        </header>
+
+        <main>
+            <div class="form-container">
+                <h2>Loan Application Details</h2>
+                <form id="loanForm">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="age">Age *</label>
+                            <input type="number" id="age" name="age" min="18" max="100" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="income">Annual Income ($) *</label>
+                            <input type="number" id="income" name="income" min="0" step="1000" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="loan_amount">Loan Amount ($) *</label>
+                            <input type="number" id="loan_amount" name="loan_amount" min="0" step="1000" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="credit_score">Credit Score *</label>
+                            <input type="number" id="credit_score" name="credit_score" min="300" max="850" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="employment_years">Employment Years *</label>
+                            <input type="number" id="employment_years" name="employment_years" min="0" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="debt_to_income">Debt-to-Income Ratio *</label>
+                            <input type="number" id="debt_to_income" name="debt_to_income" min="0" max="1" step="0.01" required>
+                            <small>Enter as decimal (e.g., 0.35 for 35%)</small>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="loan_purpose">Loan Purpose *</label>
+                            <select id="loan_purpose" name="loan_purpose" required>
+                                <option value="">-- Select Purpose --</option>
+                                <option value="home">Home</option>
+                                <option value="auto">Auto</option>
+                                <option value="education">Education</option>
+                                <option value="business">Business</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="button-group">
+                        <button type="submit" class="btn btn-primary">
+                            <span class="btn-text">Predict Risk</span>
+                            <span class="loader" style="display: none;"></span>
+                        </button>
+                        <button type="reset" class="btn btn-secondary">Clear Form</button>
+                    </div>
+                </form>
+            </div>
+
+            <div id="result" class="result-container" style="display: none;">
+                <h2>Prediction Result</h2>
+                <div id="resultContent"></div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Loan Risk Prediction System | Powered by AI</p>
+        </footer>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
